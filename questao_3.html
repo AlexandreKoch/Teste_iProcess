@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+</head>
+<body>
+    <label for="valor1">Insira um valor de 1 a 5</label>
+    <input type="number" min="1" max="5" id="valor1">
+    <div id="retorno1"></div>
+    <br>
+    <label for="valor2">Insira outro valor de 1 a 5</label>
+    <input type="number" min="1" max="5" id="valor2">
+    <div id="retorno2"></div>
+
+    <button onclick="somar()">Somar</button>
+    <br><br>
+    <div id="soma"></div>
+
+    <script>
+        function verificarValor1() {
+            var valor1 = parseInt(document.getElementById("valor1").value);
+            var retorno1 = document.getElementById("retorno1");
+
+            if (valor1 >= 3 && valor1 <= 5) {
+                retorno1.textContent = "Correto!";
+            } else {
+                retorno1.textContent = "Incorreto!";
+            }
+        }
+
+        function verificarValor2() {
+            var valor1 = parseInt(document.getElementById("valor1").value);
+            var valor2 = parseInt(document.getElementById("valor2").value);
+            var retorno2 = document.getElementById("retorno2");
+
+            if (valor2 < valor1) {
+                retorno2.textContent = "Correto!";
+            } else {
+                retorno2.textContent = "Incorreto!";
+            }
+        }
+
+        function somar() {
+            var valor1 = parseInt(document.getElementById("valor1").value);
+            var valor2 = parseInt(document.getElementById("valor2").value);
+
+            var soma = valor1 + valor2;
+            document.getElementById("soma").innerText = "A soma é: " + soma;
+        }
+
+        document.getElementById("valor1").addEventListener("input", verificarValor1);
+        document.getElementById("valor2").addEventListener("input", verificarValor2);
+    </script>
+</body>
+</html>
